@@ -28,6 +28,10 @@ eureka:
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
+  #简单粗暴把自我保护模式关闭
+  server:
+    enableSelfPreservation: false
+
 ---
 #服务注册中心端口号
 server:
