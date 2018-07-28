@@ -1,0 +1,79 @@
+#指定当前有效的配置文件
+spring:
+  profiles:
+    active: Dev
+
+---
+#服务注册中心端口号
+server:
+  port: 8761
+
+spring:
+  profiles: Dev
+    #服务注册中心实例的主机名
+eureka:
+  instance:
+    hostname: localhost
+
+  environment: dev
+
+#是否向服务注册中心注册自己
+  client:
+    register-with-eureka: false
+
+#是否检索服务
+    fetch-registry: false
+
+#服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+#服务注册中心端口号
+server:
+  port: 8762
+
+spring:
+  profiles: Test
+    #服务注册中心实例的主机名
+eureka:
+  instance:
+    hostname: localhost
+
+  environment: test
+
+#是否向服务注册中心注册自己
+  client:
+    register-with-eureka: false
+
+#是否检索服务
+    fetch-registry: false
+
+#服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+
+---
+#服务注册中心端口号
+server:
+  port: 8761
+
+spring:
+  profiles: Prd
+    #服务注册中心实例的主机名
+eureka:
+  instance:
+    hostname: localhost
+
+  environment: prd
+
+#是否向服务注册中心注册自己
+  client:
+    register-with-eureka: false
+
+#是否检索服务
+    fetch-registry: false
+
+#服务注册中心的配置内容，指定服务注册中心的位置
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
