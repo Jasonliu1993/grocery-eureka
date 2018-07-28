@@ -56,7 +56,7 @@ eureka:
 ---
 #服务注册中心端口号
 server:
-  port: 8761
+  port: 8763
 
 spring:
   profiles: Prd
